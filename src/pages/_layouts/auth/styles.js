@@ -23,6 +23,7 @@ export const Content = styled.div`
       background: rgba(0, 0, 0, 0.1);
       border: 0;
       border-radius: 4px;
+      font-family: 'Helvetica', FontAwesome, sans-serif;
       height: 44px;
       padding: 0 15px;
       color: #fff;
@@ -47,6 +48,7 @@ export const Content = styled.div`
       font-weight: bold;
       color: #fff;
       border: 0;
+      font-family: 'Helvetica', FontAwesome, sans-serif;
       border-radius: 4px;
       font-size: 16px;
       transition: backgroun 0.2s;

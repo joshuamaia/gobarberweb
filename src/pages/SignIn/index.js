@@ -24,14 +24,16 @@ export default function SignIn() {
     <>
       <img src={logo} alt="GoBarber" />
       <Form schema={schema} onSubmit={handleSubmit}>
-        <Input name="email" type="email" placeholder="Seu e-mail" />
+        <Input name="email" type="email" placeholder="&#xf0e0; Seu e-mail" />
         <Input
           name="password"
           type="password"
-          placeholder="Sua senha secreta"
+          placeholder="&#xf084; Sua senha secreta"
         />
 
-        <button type="submit">Acessar</button>
+        <button type="submit">
+          <i className="fa fa-sign-in"> Acessar</i>
+        </button>
         <Link to="/register">Criar sua conta gratuita</Link>
       </Form>
     </>
