@@ -3,8 +3,8 @@ import { darken } from 'polished';
 
 export const Wrapper = styled.div`
   height: 100%;
-  background: linear-gradient(-90deg, #1e90ff, #00bfff);
   display: flex;
+  background: linear-gradient(-90deg, #f5deb3, #ffdead);
   justify-content: center;
   align-items: center;
 `;
@@ -29,7 +29,7 @@ export const Content = styled.div`
       margin: 0 0 10px;
 
       &::placeholder {
-        color: rgba(255, 255, 255, 0.7);
+        color: rgba(210, 105, 30, 0.7);
       }
     }
 
@@ -43,7 +43,7 @@ export const Content = styled.div`
     button {
       margin: 5px 0 0;
       height: 44px;
-      background: #0000ff;
+      background: #d2691e;
       font-weight: bold;
       color: #fff;
       border: 0;
@@ -52,12 +52,12 @@ export const Content = styled.div`
       transition: backgroun 0.2s;
 
       &:hover {
-        background: ${darken(0.03, '#0000FF')};
+        background: ${darken(0.03, '#8B4513')};
       }
     }
 
     a {
-      color: #fff;
+      color: #0000ff;
       margin-top: 15px;
       font-size: 16px;
       opacity: 0.8;
