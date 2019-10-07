@@ -1,19 +1,29 @@
 import React from 'react';
 import { Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import Routes from './routes';
-import history from './services/history';
+import { PersistGate } from 'redux-persist/integration/react';
+import { ToastContainer } from 'react-toastify';
+
+// iniciar o Reactotron, precisa ser iniciado antes da store
 import './config/ReactotronConfig';
-import store from './store';
+
+// rotas
+import Routes from './routes';
+// gerenciador de historico de seção
+import history from './services/history';
+import { store, persistor } from './store';
 import GlobalStyle from './styles/global';
 
 function App() {
   return (
     <Provider store={store}>
-      <Router history={history}>
-        <Routes />
-        <GlobalStyle />
-      </Router>
+      <PersistGate persistor={persistor}>
+        <Router history={history}>
+          <Routes />
+          <GlobalStyle />
+          <ToastContainer autoClose={3000} />
+        </Router>
+      </PersistGate>
     </Provider>
   );
 }

@@ -1,30 +1,36 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import AuthLayout from '~/pages/_layouts/auth';
-import DefaultLayout from '~/pages/_layouts/default';
-
-import '../config/ReactotronConfig';
-import store from '~/store';
-
+import DefaulLayout from '~/pages/_layouts/default';
+import { store } from '~/store';
+/**
+ * Wrapper para Route do react-router-dom
+ * Faz as devidas validações antes do usuário acessar a página
+ */
 export default function RouteWrapper({
   component: Component,
   isPrivate,
   ...rest
 }) {
+  // flag para usuário logado
   const { signed } = store.getState().auth;
 
+  // caso o usuário não esteja logado e a rota for privada
   if (!signed && isPrivate) {
     return <Redirect to="/" />;
   }
 
+  // caso o usuário já esteja logado, redireciona o usuário
   if (signed && !isPrivate) {
     return <Redirect to="/dashboard" />;
   }
 
-  const Layout = signed ? DefaultLayout : AuthLayout;
+  // definição do layout
+  const Layout = signed ? DefaulLayout : AuthLayout;
 
+  // retorna o componente acessado
   return (
     <Route
       {...rest}

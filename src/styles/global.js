@@ -1,11 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
+import 'react-toastify/dist/ReactToastify.css';
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
 export default createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
   * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     outline: 0;
     box-sizing: border-box;
   }
@@ -14,15 +16,19 @@ export default createGlobalStyle`
     outline: 0;
   }
 
-  html, body, #root {
+  html, body {
     height: 100%;
   }
 
-  body {
-    -webkit-font-smoothing: antialiased !important;
+  #root {
+    min-height: 100%;
   }
 
-  body, input, button {
+  body {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body, button, input {
     font: 14px 'Roboto', sans-serif;
   }
 
